@@ -1,0 +1,120 @@
+
+* { box-sizing: border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  width: 380px;
+  background:#f5f6f7;
+  color:#111;
+}
+.wrap{ padding:12px; }
+.top{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:10px;
+}
+.title{ font-weight:700; font-size:14px; }
+.statusLine{ font-size:11px; color:#555; text-align:right; }
+
+.card{
+  background:#fff;
+  border:1px solid #e7e8ea;
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.btn{
+  width:100%;
+  padding:9px 10px;
+  border:0;
+  border-radius:8px;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  font-size:13px;
+  margin-bottom:8px;
+}
+.btn:last-child{ margin-bottom:0; }
+.btnSecondary{ background:#3a3a3a; }
+
+.progress{ margin-top:10px; }
+.bar{
+  height:8px;
+  background:#e8e9ee;
+  border-radius:999px;
+  overflow:hidden;
+}
+.barInner{
+  height:100%;
+  width:0%;
+  background:#111;
+}
+.progressText{ font-size:11px; color:#444; margin-top:6px; }
+
+.controlsGrid{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:6px;
+}
+.btnSmall{
+  padding:8px 10px;
+  border:0;
+  border-radius:8px;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+}
+.btnSmall.danger{ background:#b00020; }
+
+.row{ display:flex; gap:8px; align-items:center; margin-top:8px; }
+.rowEnd{ display:flex; justify-content:flex-end; margin-top:8px; }
+.linkBtn{
+  background:transparent;
+  border:0;
+  color:#2a5bd7;
+  font-size:12px;
+  cursor:pointer;
+  padding:0;
+}
+
+.subtitle{ font-weight:700; font-size:12px; margin-bottom:8px; }
+.field{ margin-bottom:8px; }
+.label{ font-size:11px; color:#333; margin-bottom:6px; }
+input[type="number"], input[type="text"]{
+  width:100%;
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #d8d9dd;
+  font-size:13px;
+}
+.saveStatus{ font-size:11px; color:#0a7b2f; min-height:14px; }
+
+.hint{ margin-top:6px; font-size:11px; color:#666; line-height:1.25; }
+
+.ta{
+  width:100%;
+  min-height:110px;
+  resize:vertical;
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #d8d9dd;
+  font-size:11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  line-height:1.35;
+}
+
+.errorBox{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px dashed #e7e8ea;
+}
+.errorTitle{ font-weight:700; font-size:12px; margin-bottom:6px; }
+.hidden{ display:none; }
+.smallNote{ font-size:11px; color:#555; margin-left:auto; }
+
+.ver{font-weight:600;color:#666;font-size:11px;margin-left:6px;}

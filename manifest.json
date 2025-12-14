@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Yandex Disk: Right-click Download",
+  "version": "1.4.6",
+  "description": "Download Yandex Disk links via right-click or extension menu. Bulk mode with concurrency, pause/stop, filters and export.",
+  "permissions": [
+    "contextMenus",
+    "downloads",
+    "notifications",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://cloud-api.yandex.net/*",
+    "https://disk.yandex.ru/*",
+    "https://disk.yandex.com/*",
+    "https://yadi.sk/*",
+    "https://downloader.disk.yandex.ru/*",
+    "https://downloader.disk.yandex.net/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Яндекс.Диск",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

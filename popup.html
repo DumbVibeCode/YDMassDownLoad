@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Яндекс.Диск</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="title">Яндекс.Диск <span id="ver" class="ver"></span></div>
+      <div id="statusLine" class="statusLine">—</div>
+    </div>
+
+    <div class="card">
+      <button id="btnDownloadPage" class="btn">Скачать текущую страницу Я.Диска</button>
+      <button id="btnDownloadAll" class="btn btnSecondary">Скачать все ссылки Я.Диска на странице</button>
+
+      <div class="progress">
+        <div class="bar"><div id="barInner" class="barInner"></div></div>
+        <div id="progressText" class="progressText">—</div>
+      </div>
+
+      <div class="controlsGrid">
+        <button id="btnStop" class="btnSmall">Стоп (очередь)</button>
+        <button id="btnStopCancel" class="btnSmall danger">Стоп + отменить</button>
+        <button id="btnPauseQueue" class="btnSmall">Пауза очереди</button>
+        <button id="btnPauseFreeze" class="btnSmall">Пауза + заморозить</button>
+        <button id="btnResume" class="btnSmall">Продолжить</button>
+        <button id="btnRetryErrors" class="btnSmall">Повторить ошибки</button>
+      </div>
+
+      <div class="rowEnd">
+        <button id="btnClearErrors" class="linkBtn">Очистить ошибки</button>
+      </div>
+
+      <div id="errorBox" class="errorBox hidden">
+        <div class="errorTitle">Ошибки (<span id="errCount">0</span>)</div>
+        <textarea id="errList" class="ta" readonly></textarea>
+        <div class="row">
+          <button id="btnCopyErrors" class="btnSmall">Скопировать ошибки</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="subtitle">Настройки массовой закачки</div>
+
+      <div class="field">
+        <div class="label">Одновременных закачек (1–10)</div>
+        <input id="maxConcurrent" type="number" min="1" max="10" step="1" />
+      </div>
+
+      <div class="field">
+        <div class="label">Лимит N (0 = без лимита)</div>
+        <input id="maxItems" type="number" min="0" max="100000" step="1" />
+      </div>
+
+      <div class="field">
+        <div class="label">Фильтр по расширениям (пример: mp3, flac, zip)</div>
+        <input id="extFilter" type="text" placeholder="пусто = всё" />
+      </div>
+
+      <div class="row">
+        <button id="btnSave" class="btnSmall">Сохранить</button>
+        <div id="saveStatus" class="saveStatus"></div>
+      </div>
+      <div class="hint">Фильтр применяется по имени файла в прямой ссылке (иногда расширение определить нельзя — тогда файл пропускается).</div>
+    </div>
+
+    <div class="card">
+      <div class="subtitle">Экспорт / копирование ссылок со страницы</div>
+
+      <button id="btnCollect" class="btn btnSecondary">Собрать ссылки на странице</button>
+
+      <div class="row">
+        <button id="btnCopyLinks" class="btnSmall">Скопировать</button>
+        <button id="btnDownloadTxt" class="btnSmall">Скачать .txt</button>
+        <div id="linksCount" class="smallNote">—</div>
+      </div>
+
+      <textarea id="linksArea" class="ta" readonly placeholder="Нажми «Собрать ссылки…»"></textarea>
+      <div class="hint">Сюда попадают найденные ссылки Я.Диска (share‑ссылки). Фильтр по расширению применяется во время скачивания.</div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
