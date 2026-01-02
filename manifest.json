@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Yandex Disk: Right-click Download",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Download Yandex Disk links via right-click or extension menu. Bulk mode with concurrency, pause/stop, filters and export.",
   "permissions": [
     "contextMenus",
@@ -14,6 +14,7 @@
   "host_permissions": [
     "https://cloud-api.yandex.net/*",
     "https://disk.yandex.ru/*",
+    "https://disk.yandex.by/*",
     "https://disk.yandex.com/*",
     "https://yadi.sk/*",
     "https://downloader.disk.yandex.ru/*",
