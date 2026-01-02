@@ -37,6 +37,7 @@ chrome.runtime.onInstalled.addListener(() => {
         contexts: ["link"],
         targetUrlPatterns: [
           "*://disk.yandex.ru/*",
+          "*://disk.yandex.by/*",
           "*://disk.yandex.com/*",
           "*://yadi.sk/*"
         ]
@@ -48,6 +49,7 @@ chrome.runtime.onInstalled.addListener(() => {
         contexts: ["page"],
         documentUrlPatterns: [
           "*://disk.yandex.ru/*",
+          "*://disk.yandex.by/*",
           "*://disk.yandex.com/*",
           "*://yadi.sk/*"
         ]
@@ -679,7 +681,7 @@ async function collectYadiskLinksFromTab(tabId) {
         try {
           const href = a.href;
           const u = new URL(href);
-          const hostOk = ["disk.yandex.ru", "disk.yandex.com", "yadi.sk"].includes(u.hostname);
+          const hostOk = ["disk.yandex.ru", "disk.yandex.by", "disk.yandex.com", "yadi.sk"].includes(u.hostname);
           if (!hostOk) continue;
           out.push(href);
         } catch (_) {}
@@ -703,7 +705,7 @@ function notify(title, message) {
 
 function isYadiskUrl(urlStr) {
   const u = new URL(urlStr);
-  return ["disk.yandex.ru", "disk.yandex.com", "yadi.sk"].includes(u.hostname);
+  return ["disk.yandex.ru", "disk.yandex.by", "disk.yandex.com", "yadi.sk"].includes(u.hostname);
 }
 
 async function getBestDownloadHref(urlStr) {
